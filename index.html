@@ -18,6 +18,20 @@ html[data-theme="light"]{--bg:#f4f6f8;--panel:#fff;--panel2:#eef1f4;--text:#1519
 @media(min-width:1000px){.app{padding-left:86px;padding-bottom:0}.bottom{top:0;bottom:0;right:auto;width:86px;border-top:0;border-right:1px solid var(--line);align-items:center}.nav{display:flex;flex-direction:column;width:100%}.nav button{padding:15px 4px}.top{margin-left:0}.collections{grid-template-columns:repeat(3,minmax(0,1fr))}.coins{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 .authwrap{min-height:calc(100vh - 64px);display:grid;place-items:center;padding:24px}.authcard{width:min(430px,100%)}.authcard input{width:100%;margin:7px 0 12px;border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:12px;padding:12px 13px;font-size:16px}.authcard .btn{width:100%;padding:12px;font-weight:800}.syncpill{font-size:12px;padding:6px 9px;border:1px solid var(--line);border-radius:999px;color:var(--muted);white-space:nowrap}.syncpill.ok{color:var(--good);border-color:color-mix(in srgb,var(--good) 45%,var(--line))}.syncpill.busy{color:var(--warn)}.syncpill.err{color:var(--bad)}.syncpill.pending{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,var(--line))}.autherr{color:var(--bad);font-size:13px;min-height:20px}.userline{word-break:break-all}.top .syncpill{display:inline-block}
+
+/* V3.1: iPhone installed PWA safe areas */
+@media (display-mode: standalone) {
+  .top { padding-top: env(safe-area-inset-top, 0px); }
+  .bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }
+}
+@supports (-webkit-touch-callout: none) {
+  @media (display-mode: standalone) and (max-width: 720px) {
+    .topin { flex-wrap: wrap; row-gap: 8px; }
+    .brand { min-width: 0; font-size: 14px; }
+    .quick { flex-shrink: 0; gap: 5px; }
+    .quick .iconbtn { padding: 8px; }
+  }
+}
 </style>
 </head>
 <body><div class="app">
